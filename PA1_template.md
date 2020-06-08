@@ -13,26 +13,7 @@ output:
 ##Load packages
 library(ggplot2)
 library(dplyr)
-```
 
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 #check if file is in directory
 if (!file.exists('activity.csv')){
         unzip('activity.zip')
@@ -54,7 +35,7 @@ plot1+geom_col()+ theme(axis.text.x = element_text(angle = 90)) + labs(title = "
 ## Warning: Removed 2304 rows containing missing values (position_stack).
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 Calculate and report the **mean** and **median** total number of steps taken per day:
 
@@ -109,7 +90,7 @@ plot2 <- ggplot(intervals, aes(x=interval, y=meansteps))
 plot2 + geom_line() + labs(title = "Mean activity level", y="steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 Interval with maximum steps: 
 
@@ -189,10 +170,10 @@ Histogram of total number of steps taken each day of new dataset:
 
 plot3 <- ggplot(narm_data, aes(date, steps))
 
-plot3+geom_col()+theme(axis.text.x = element_text(angle = 90))
+plot3+geom_col()+theme(axis.text.x = element_text(angle = 90)) + labs(title= "Steps per day (after removing missing values)")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
 Calculate and report the **mean** and **median** total number of steps taken per day:
 
@@ -292,7 +273,7 @@ plot4 +
         labs(title = "Mean activity level: Weekday vs Weekend", y= "steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
 
 During weekdays people seem to be more active during a specific time interval (750-1000) whereas the activitylevel is more spread during the weekend.
